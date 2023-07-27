@@ -24,7 +24,11 @@ void	ft_putstr(char *c, int *result)
 
 	i = 0;
 	if (!c)
-		c = "(null)";
+	{
+		ft_putstr("(null)", result);
+		result += 6;
+		return ;
+	}
 	while (c[i])
 	{
 		ft_putchar(c[i], result);
@@ -34,9 +38,6 @@ void	ft_putstr(char *c, int *result)
 
 void	ft_putnbr(int n, int *result)
 {
-	int	i;
-
-	i = 0;
 	if (n == -2147483648)
 		return (ft_putstr("-2147483648", result));
 	if (n < 0)
